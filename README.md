@@ -55,10 +55,14 @@ To learn more about developing your project with Expo, look at the following res
 -  Branching Workflow (Team Standard)
 To keep the development process organized and consistent across all team members, follow the branch naming convention below:
 
-Branch Types:
+-  Branch Types:
+
 Feature	feature/New features
+
 Bug Fix	bugfix/Fixing minor or medium-level bugs
+
 Hotfix	hotfix/Critical production fixes
+
 Refactor	refactor/Code improvements or restructuring
 
 -  Git Workflow
