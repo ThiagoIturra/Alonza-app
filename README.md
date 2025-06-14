@@ -52,18 +52,22 @@ To learn more about developing your project with Expo, look at the following res
 - [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
 - [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
+---
+
 -  Branching Workflow (Team Standard)
 To keep the development process organized and consistent across all team members, follow the branch naming convention below:
 
 -  Branch Types:
 
-**Feature**	feature/New features
+- **Feature**:	feature/New features
 
-**Bug Fix**	bugfix/Fixing minor or medium-level bugs
+- **Bug Fix**:	bugfix/Fixing minor or medium-level bugs
 
-**Hotfix**	hotfix/Critical production fixes
+- **Hotfix**:	hotfix/Critical production fixes
 
-**Refactor**	refactor/Code improvements or restructuring
+- **Refactor**:	refactor/Code improvements or restructuring
+
+---
 
 -  Git Workflow
 Create a branch
