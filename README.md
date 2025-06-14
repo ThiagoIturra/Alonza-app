@@ -57,13 +57,13 @@ To keep the development process organized and consistent across all team members
 
 -  Branch Types:
 
-Feature	feature/New features
+**Feature**	feature/New features
 
-Bug Fix	bugfix/Fixing minor or medium-level bugs
+**Bug Fix**	bugfix/Fixing minor or medium-level bugs
 
-Hotfix	hotfix/Critical production fixes
+**Hotfix**	hotfix/Critical production fixes
 
-Refactor	refactor/Code improvements or restructuring
+**Refactor**	refactor/Code improvements or restructuring
 
 -  Git Workflow
 Create a branch
