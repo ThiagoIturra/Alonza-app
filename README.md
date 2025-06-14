@@ -1,50 +1,66 @@
-# Welcome to your Expo app 👋
+🍕 Pizza App
+Pizza App is a mobile application developed to streamline the ordering experience between pizzerias and their customers. Users can browse the menu, place orders, and check business hours — all within a mobile-first interface.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+⚠️ This is a portfolio project created for educational and technical demonstration purposes only.
+The repository is public for code analysis and review, but not intended for public use, redistribution, or production deployment.
 
-## Get started
+🛠 Tech Stack
+React Native with TypeScript
 
-1. Install dependencies
+Expo for development and testing
 
-   ```bash
-   npm install
-   ```
+Pure React Native styles – no external UI libraries
 
-2. Start the app
+File-based routing with expo-router
 
-   ```bash
-    npx expo start
-   ```
+🚀 Getting Started
+Install dependencies:
 
-In the output, you'll find options to open the app in a
+bash
+Copiar
+Editar
+npm install
+Start the development server:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+bash
+Copiar
+Editar
+npx expo start
+You can run the app using:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Expo Go
 
-## Get a fresh project
+Android Emulator
 
-When you're ready, run:
+iOS Simulator
 
-```bash
+Custom dev builds
+
+📁 Project Structure
+bash
+Copiar
+Editar
+/
+├── app/           # Routes and screens (expo-router)
+├── components/    # Reusable UI components
+├── constants/     # Themes, colors, configs
+├── assets/        # Fonts and images
+├── types/         # TypeScript types
+└── ...
+🧹 Reset Template (Optional)
+To reset the starter code and start from a blank app:
+
+bash
+Copiar
+Editar
 npm run reset-project
-```
+📚 References
+Expo Docs
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+React Native Docs
 
-## Learn more
+Expo Router
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+👨‍💻 About This Project
+This app was developed as part of my personal portfolio to explore and demonstrate mobile development skills using React Native and TypeScript.
+Feel free to explore the codebase and structure for learning purposes.
