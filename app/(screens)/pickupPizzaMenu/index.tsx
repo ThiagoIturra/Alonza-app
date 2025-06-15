@@ -1,8 +1,9 @@
-import { StatusBar, StyleSheet, View, Text, Image} from 'react-native';
+import { StatusBar, StyleSheet, View, Text, Image, ScrollView} from 'react-native';
 import { useRouter } from 'expo-router';
 import { TopBar } from '../../../components/topBar/TopBar';
 import CustomButton from '../../../components/customButton/CustomButton';
 import { CardDefault } from '../../../components/cardDefault/CardDefault';
+import { pickupPizzaMenuMock } from '../../../mocks/pickupPizzaMenuMock';
 
 export default function pickupPizzaMenu() {
   const router = useRouter();
@@ -11,18 +12,23 @@ export default function pickupPizzaMenu() {
     <View style={styles.container}>
         <StatusBar backgroundColor="#e03b39" barStyle="dark-content" />
         <TopBar title="Cardápio de Pizzas" goBackTo="/(screens)/pickupMenu"/>
+        <ScrollView style={styles.contentScrol}>
         <View style={styles.content}>
-            <CardDefault style={{ width: '95%', flexDirection: "row", alignItems: 'flex-start', elevation: 3, padding: 10 }}>
-                    <Image style={styles.image}/>
-                    <View style={styles.textContent}>
-                        <View style={styles.titleRow}>
-                            <Text style={styles.title}>Aliche I</Text>
-                            <Text style={styles.price}>R$ 54,00</Text>
-                        </View>
-                        <Text style={styles.description}>Filé de aliche e molho de tomate</Text>
-                    </View>
-            </CardDefault>
+            {pickupPizzaMenuMock.map((pizza, index) => (
+              <CardDefault key={index} style={{ width: '95%', flexDirection: "row", alignItems: 'flex-start', elevation: 3, padding: 10 }}>
+                <Image style={styles.image}/>
+                <View style={styles.textContent}>
+                  <View style={styles.titleRow}>
+                    <Text style={styles.title}>{pizza.title}</Text>
+                    <Text style={styles.price}>R$ {pizza.price}</Text>
+                  </View>
+                  <Text style={styles.description}>{pizza.description}</Text>
+                </View>
+              </CardDefault>
+            
+            ))}
         </View>
+        </ScrollView>
     </View>
   );
 }
@@ -39,6 +45,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fae3b3',
     paddingTop: 23,
     paddingBottom: 32, 
+  },
+  contentScrol: {
+    
   },
   image: {
     width: 90,
