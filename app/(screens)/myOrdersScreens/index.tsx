@@ -1,7 +1,9 @@
 import { Text, StyleSheet, StatusBar, ScrollView, View } from 'react-native';
 import { useRouter } from 'expo-router';
+import { TouchableOpacity } from 'react-native';
 import { CardDefault } from '../../../components/cardDefault/CardDefault';
 import { TopBar } from '../../../components/topBar/TopBar';
+import { ordersMock } from '../../../mocks/ordersMock';
 
 export default function myOrdersScreens() {
   const router = useRouter();
@@ -15,68 +17,27 @@ export default function myOrdersScreens() {
           <Text style={styles.cardTitle}>Seus últimos 10 pedidos</Text>
         </CardDefault>
 
-        <CardDefault style={{ marginTop: 30 }}>
-          <Text style={styles.orderInfo}>
-            16/03/2025 22:26 <Text style={styles.orderLabel}>- Pedido 394751</Text>
-          </Text>
-          <Text style={styles.orderStatus}>Em andamento</Text>
-        </CardDefault>
+        {ordersMock.map(({ date, id, status }, index) => (
+          <TouchableOpacity
+            key={id}
+            activeOpacity={0.9}
+            onPress={() => {
+              // For now, it does nothing
+            }}
+          >
+            <CardDefault style={{ marginTop: index === 0 ? 30 : 15 }}>
+              <View style={styles.orderInfoRow}>
+                <Text style={styles.orderInfo}>{date}</Text>
+                <Text style={styles.orderLabel}>Pedido {id}</Text>
+              </View>
+              <Text style={status === 'Finalizado' ? styles.orderStatusDone : styles.orderStatus}>
+                {status}
+              </Text>
+            </CardDefault>
+          </TouchableOpacity>
+        ))}
 
-        <CardDefault style={{ marginTop: 15 }}>
-          <Text style={styles.orderInfo}>
-            15/03/2025 20:02 <Text style={styles.orderLabel}>- Pedido 394632</Text>
-          </Text>
-          <Text style={styles.orderStatus}>Em andamento</Text>
-        </CardDefault>
 
-        <CardDefault style={{ marginTop: 15 }}>
-          <Text style={styles.orderInfo}>
-            15/03/2025 11:40 <Text style={styles.orderLabel}>- Pedido 394600</Text>
-          </Text>
-          <Text style={styles.orderStatus}>Em andamento</Text>
-        </CardDefault>
-
-        <CardDefault style={{ marginTop: 15 }}>
-          <Text style={styles.orderInfo}>
-            14/03/2025 19:10 <Text style={styles.orderLabel}>- Pedido 394102</Text>
-          </Text>
-          <Text style={styles.orderStatusDone}>Finalizado</Text>
-        </CardDefault>
-
-        <CardDefault style={{ marginTop: 15 }}>
-          <Text style={styles.orderInfo}>
-            13/03/2025 13:45 <Text style={styles.orderLabel}>- Pedido 393980</Text>
-          </Text>
-          <Text style={styles.orderStatusDone}>Finalizado</Text>
-        </CardDefault>
-
-        <CardDefault style={{ marginTop: 15 }}>
-          <Text style={styles.orderInfo}>
-            12/03/2025 21:33 <Text style={styles.orderLabel}>- Pedido 393875</Text>
-          </Text>
-          <Text style={styles.orderStatusDone}>Finalizado</Text>
-        </CardDefault>
-
-        <CardDefault style={{ marginTop: 15 }}>
-          <Text style={styles.orderInfo}>
-            11/03/2025 10:15 <Text style={styles.orderLabel}>- Pedido 393760</Text>
-          </Text>
-          <Text style={styles.orderStatusDone}>Finalizado</Text>
-        </CardDefault>
-
-        <CardDefault style={{ marginTop: 15 }}>
-          <Text style={styles.orderInfo}>
-            10/03/2025 17:55 <Text style={styles.orderLabel}>- Pedido 393645</Text>
-          </Text>
-          <Text style={styles.orderStatusDone}>Finalizado</Text>
-        </CardDefault>
-
-        <CardDefault style={{ marginTop: 15 }}>
-          <Text style={styles.orderInfo}>
-            09/03/2025 09:10 <Text style={styles.orderLabel}>- Pedido 393500</Text>
-          </Text>
-          <Text style={styles.orderStatusDone}>Finalizado</Text>
-        </CardDefault>
         <View style={{ height: 16 }} />
       </ScrollView>
     </View>
@@ -103,6 +64,11 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 18,
     fontWeight: '500'
+  },
+  orderInfoRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
   },
   orderInfo: {
     fontSize: 14,
