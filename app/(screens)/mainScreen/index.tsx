@@ -2,7 +2,7 @@ import { StyleSheet, SafeAreaView, StatusBar } from 'react-native'
 import { useRouter } from 'expo-router';
 import CustomButton from '../../../components/customButton/CustomButton'
 import LogoImage from '../../../components/logoImage/LogoImage'
-import ClosedBanner from '../../../components/closedBanner.tsx/ClosedBanner';
+import ClosedBanner from '../../../components/closedBanner/ClosedBanner';
 import { Share } from 'react-native';
 import React from 'react';
 
