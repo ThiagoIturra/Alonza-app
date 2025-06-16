@@ -1,9 +1,9 @@
 import { StatusBar, StyleSheet, View, Text, Image, ScrollView} from 'react-native';
 import { useRouter } from 'expo-router';
 import { TopBar } from '../../../components/topBar/TopBar';
-import CustomButton from '../../../components/customButton/CustomButton';
 import { CardDefault } from '../../../components/cardDefault/CardDefault';
 import { pickupPizzaMenuMock } from '../../../mocks/pickupPizzaMenuMock';
+import { CartPriceBar } from '../../../components/cartPriceBar/cartPriceBar';
 
 export default function pickupPizzaMenu() {
   const router = useRouter();
@@ -12,7 +12,7 @@ export default function pickupPizzaMenu() {
     <View style={styles.container}>
         <StatusBar backgroundColor="#e03b39" barStyle="dark-content" />
         <TopBar title="Cardápio de Pizzas" goBackTo="/(screens)/pickupMenu"/>
-        <ScrollView style={styles.contentScrol}>
+        <ScrollView>
         <View style={styles.content}>
             {pickupPizzaMenuMock.map((pizza, index) => (
               <CardDefault key={index} style={{ width: '95%', flexDirection: "row", alignItems: 'flex-start', elevation: 3, padding: 10 }}>
@@ -25,10 +25,10 @@ export default function pickupPizzaMenu() {
                   <Text style={styles.description}>{pizza.description}</Text>
                 </View>
               </CardDefault>
-            
             ))}
         </View>
         </ScrollView>
+        <CartPriceBar/>
     </View>
   );
 }
@@ -43,11 +43,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 16,
     backgroundColor: '#fae3b3',
-    paddingTop: 23,
-    paddingBottom: 32, 
-  },
-  contentScrol: {
-    
+    paddingTop: 25,
+    paddingBottom: 85, 
   },
   image: {
     width: 90,
