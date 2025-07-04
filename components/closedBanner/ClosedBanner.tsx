@@ -28,7 +28,7 @@ export default function ClosedBanner() {
       <Text style={styles.text}>
         {isOpen
           ? 'Já estamos prontos! Faça seu pedido.'
-          : 'A cozinha tá aquecendo! Volte às 18h!'}
+          : 'A cozinha está aquecendo! Volte às 18h!'}
       </Text>
     </View>
   )

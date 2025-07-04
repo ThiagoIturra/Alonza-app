@@ -46,6 +46,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         <TouchableOpacity
           style={[
             styles.filterButton,
+            { borderTopLeftRadius: 10, borderBottomLeftRadius: 10 },
             activeFilter === 'title' ? styles.activeButton : styles.inactiveButton,
           ]}
           onPress={() => handleFilterPress('title')}
@@ -63,6 +64,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         <TouchableOpacity
           style={[
             styles.filterButton,
+            { borderTopRightRadius: 10, borderBottomRightRadius: 10 },
             activeFilter === 'price' ? styles.activeButton : styles.inactiveButton,
           ]}
           onPress={() => handleFilterPress('price')}
@@ -96,10 +98,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   filterButton: {
-    borderRadius: 10,
     paddingHorizontal: 12,
     paddingVertical: 6,
-    marginRight: 1,
     borderWidth: 1,
   },
   activeButton: {
