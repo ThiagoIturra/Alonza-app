@@ -1,4 +1,4 @@
-import { StatusBar, StyleSheet, View, Text, Image, ScrollView} from 'react-native';
+import { StatusBar, StyleSheet, View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import { useRouter } from 'expo-router';
 import { TopBar } from '../../../components/topBar/TopBar';
 import { CardDefault } from '../../../components/cardDefault/CardDefault';
@@ -46,6 +46,16 @@ export default function pickupPizzaMenu() {
   
     setFilteredPizzas(sortedPizzas);
   };
+
+  const handleCardClick = (pizza) => {
+    router.push({
+      pathname: '/(screens)/pizzaDetailScreen',
+      params: {
+        pizza: JSON.stringify(pizza),
+      },
+    });
+  };
+
   return (
     <View style={styles.container}>
         <StatusBar backgroundColor="#e03b39" barStyle="dark-content" />
@@ -56,6 +66,7 @@ export default function pickupPizzaMenu() {
         <ScrollView>
         <View style={styles.content}>
         {filteredPizzas.map((pizza, index) => (
+          <TouchableOpacity key={index} onPress={() => handleCardClick(pizza)}>
             <CardDefault
               key={index}
               style={{
@@ -83,6 +94,7 @@ export default function pickupPizzaMenu() {
                 <Text style={styles.description}>{pizza.description}</Text>
               </View>
             </CardDefault>
+            </TouchableOpacity>
           ))}
         </View>
         </ScrollView>

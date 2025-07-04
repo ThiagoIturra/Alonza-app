@@ -12,7 +12,7 @@ export const CartPriceBar = ({ cartPrice }: CartPriceBarProps) => {
   return (
     <View style={styles.cartPriceBar}>
       <Text style={styles.title}>Total: R$</Text>  
-      <Text style={styles.price}>{cartPrice}0,00</Text>
+      <Text style={styles.price}>{cartPrice}</Text>
     </View>
   );
 };
